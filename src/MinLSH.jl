@@ -35,7 +35,7 @@ function minhash(words::Set{Int64}, seed::UInt64)
     return(minhash_word)
 end
 
-function generate_signature_matrix(lsh_vars::LSH_vars, binarray_csc::SparseMatrixCSC{Float64,Int64}; window_num=100, slidewidth=50)
+function generate_signature_matrix(lsh_vars::LSH_vars, binarray_csc::SparseMatrixCSC{Bool,Int64}; window_num=100, slidewidth=50)
     numhash = lsh_vars.numhash
     extent = 1:slidewidth:(size(binarray_csc)[2] - 2window_num)
     signature_matrix = zeros((numhash, length(extent)))
@@ -96,4 +96,5 @@ function find_similar(lsh_vars::LSH_vars, signature_matrix::Array{Float64,2}, bu
     end
     return(candidates)
 end
+
 
