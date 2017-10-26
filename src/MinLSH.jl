@@ -1,4 +1,3 @@
-# こちらのソースファイルの内容を変更する際には../Notes/12_17_test_MINLSH.ipynbのコードを変更・テストの後コピペすること
 type LSH_vars
     # LSHに用いる各種変数を格納しておくtype
     numhash::Int64
